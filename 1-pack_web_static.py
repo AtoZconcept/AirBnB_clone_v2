@@ -17,9 +17,9 @@ def do_pack():
 	filename = "versions/web_static_{}.tgz".format(timestamp)
 
 	# create a tar zipped achieved
-	file_zip = local("tar -cvzf {} web_static".format(filename))
+	result = local("tar -cvzf {} web_static".format(filename))
 
-	if file_zip.succeeded:
+	if result.succeeded:
 		return filename
 	else:
 		return None
