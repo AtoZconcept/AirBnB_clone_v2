@@ -8,18 +8,18 @@ from datetime import datetime
 
 
 def do_pack():
-	"""generates a .tgz archive from the contents of the web_static"""
-	# create the versions folder if it doesn't exist
-	local("mkdir -p versions")
+    """generates a .tgz archive from the contents of the web_static"""
+    # create the versions folder if it doesn't exist
+    local("mkdir -p versions")
 
-	# generate achieve filename with timestamp
-	timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-	filename = "versions/web_static_{}.tgz".format(timestamp)
+    # generate achieve filename with timestamp
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = "versions/web_static_{}.tgz".format(timestamp)
 
-	# create a tar zipped achieved
-	result = local("tar -cvzf {} web_static".format(filename))
+    # create a tar zipped achieved
+    result = local("tar -cvzf {} web_static".format(filename))
 
-	if result.succeeded:
-		return filename
-	else:
-		return None
+    if result.succeeded:
+        return filename
+    else:
+        return None
