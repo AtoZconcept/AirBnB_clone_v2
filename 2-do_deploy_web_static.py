@@ -20,7 +20,7 @@ def do_deploy(archive_path):
         # Upload the archive to the /tmp/ directory of the web server
         put(archive_path, "/tmp/")
 
-        basename = achieve_path.split("/")[-1]
+        basename = archive_path.split("/")[-1]
         filename = basename.split('.')[0]
         path = "/data/web_static/releases/{}/".format(filename)
 
