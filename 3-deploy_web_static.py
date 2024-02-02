@@ -22,6 +22,7 @@ def do_pack():
 
     return ("versions/web_static_{}.tgz".format(timestamp))
 
+
 def do_deploy(archive_path):
     """
     Fabric script (based on the file 1-pack_web_static.py)
@@ -59,6 +60,7 @@ def do_deploy(archive_path):
     except Exception:
         return False
     return True
+
 
 def deploy():
     """
